@@ -12,9 +12,8 @@ app.use(bodyParser.json())
 app.get('/', function(req, res) {
     res.json('Hello World');
 });
-app.get('/user/:id', function(req, res) {
-    id = req.params.id;
-    res.json({ id });
+app.get('/user/', function(req, res) {
+    res.send("User Get");
 });
 app.post('/user/', function(req, res) {
     body = req.body;
@@ -27,6 +26,10 @@ app.post('/user/', function(req, res) {
         res.json({ body });
     }
 
+});
+app.put('/user/:id', function(req, res) {
+    id = req.params.id;
+    res.json({ id });
 });
 
 
